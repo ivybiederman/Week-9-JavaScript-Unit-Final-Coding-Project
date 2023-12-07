@@ -1,5 +1,15 @@
 {
-  "devDependencies": {
+  "name": "week-9--javascript-unit-final-coding-project",
+  "version": "1.0.0",
+  "description": "Week 9- JavaScript Unit Final Coding Project",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
     "chai": "^4.3.10",
     "mocha": "^10.2.0"
   }
