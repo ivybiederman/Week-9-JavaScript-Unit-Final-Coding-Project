@@ -1,13 +1,13 @@
+// Define the Card class representing a playing card
 class Card {
-    // Constructor for the Card class
     constructor(rank, suit) {
         this.rank = rank; // Rank of the card (e.g., '2', '3', 'K')
         this.suit = suit; // Suit of the card (e.g., 'Hearts', 'Clubs')
     }
 }
 
+// Define the Deck class representing a deck of cards
 class Deck {
-    // Constructor for the Deck class
     constructor() {
         this.cards = []; // Array to store the deck of cards
         this.ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
@@ -40,8 +40,8 @@ class Deck {
     }
 }
 
+// Define the Player class representing a player in the game
 class Player {
-    // Constructor for the Player class
     constructor(name) {
         this.name = name; // Player's name
         this.points = 0; // Player's points
@@ -64,8 +64,8 @@ class Player {
     }
 }
 
+// Define the CardGame class representing the WAR card game
 class CardGame {
-    // Constructor for the CardGame class
     constructor(player1Name, player2Name) {
         this.deck = new Deck(); // Create a deck for the game
         this.players = [new Player(player1Name), new Player(player2Name)]; // Create two players
@@ -127,8 +127,20 @@ class CardGame {
             console.log('It\'s a tie!');
         }
     }
+
 }
 
 // Create an instance of CardGame and start playing
 const cardGame = new CardGame('Player 1', 'Player 2');
 cardGame.playGame();
+
+// Export modules for testing
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { Card, Deck, Player, CardGame };
+}
+
+// Only create an instance and start playing if not running tests
+if (typeof module === 'undefined' || !module.parent) {
+    const cardGame = new CardGame('Player 1', 'Player 2');
+    cardGame.playGame();
+}
